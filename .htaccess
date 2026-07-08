@@ -4,8 +4,8 @@
 
 <IfModule mod_rewrite.c>
     RewriteEngine On
-    RewriteBase /perdanamotor
-    #RewriteCond %{HTTP_HOST} ^(www\.)?eperdanamotor.haghara\.com$ [NC]
+    RewriteBase /asiasport
+    #RewriteCond %{HTTP_HOST} ^(www\.)?asiasport.haghara\.com$ [NC]
     RewriteRule ^$ public/index.php [L]
     #RewriteRule ^((?!public/).*)$ public/$1 [L, NC]
 </IfModule>

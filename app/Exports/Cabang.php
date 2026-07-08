@@ -27,13 +27,13 @@ class Cabang implements FromView
 
     public function view(): View
     {
-    	if(empty(session('key_token_perdana'))){
+    	if(empty(session('key_token_asiasport'))){
     		return redirect('logout')->with('error','Terjadi kesalahan!!! silahkan hubungi kami');
     	}else{ 
             date_default_timezone_set('Asia/Jakarta');
             $url_api =  env('APP_API');
-            $admin_login = session('admin_login_perdana');
-            $key_token = session('key_token_perdana');        
+            $admin_login = session('admin_login_asiasport');
+            $key_token = session('key_token_asiasport');        
             $request['url_api'] = $url_api;
             $request['u'] = $admin_login;
             $request['token'] = $key_token;            
