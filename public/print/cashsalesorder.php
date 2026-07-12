@@ -10,6 +10,7 @@
     require resource_path('views/admin/AdminOne/layout/function.blade.php');
 
     use Illuminate\Http\Request;
+    use Carbon\Carbon;
 
     if(!isset($_REQUEST['token'])){
         echo "<meta http-equiv='refresh' content='0;/'>";
@@ -159,7 +160,7 @@
 
     //         if(!empty($getdata['detail_mekanik'])){
     //             $mekanik = implode(', ', array_column($getdata['detail_mekanik'],'nama'));
-    //             $this->MultiCell(0,4,'Mekanik : '.$mekanik,0,'L');
+    //             $this->MultiCell(0,4,'Customer Service : '.$mekanik,0,'L');
     //         }
 
     //         $this->Ln(1);
@@ -462,7 +463,7 @@
 
 //         if(!empty($getdata['detail_mekanik'])){
 //             $mekanik = implode(', ', array_column($getdata['detail_mekanik'],'nama'));
-//             $this->MultiCell(0,4,'Mekanik : '.$mekanik,0,'L');
+//             $this->MultiCell(0,4,'Customer Service : '.$mekanik,0,'L');
 //         }
 
 //         $this->Ln(2);
@@ -743,10 +744,10 @@ class PDF extends MultiCellTable
         $this->Cell(35,4,$viewdata['jenis_penjualan'] ?? '',0,1,'R');
 
         $this->Cell(35,4,'No : '.($viewdata['nomor'] ?? ''),0,0,'L');
-        $this->Cell(35,4,Date::parse($viewdata['tanggal'])->format('d F Y') ?? '',0,1,'R');
+        $this->Cell(35,4,Carbon::parse($viewdata['tanggal'])->format('d F Y') ?? '',0,1,'R');
 
         $this->Cell(35,4,'Kasir : '.($getdata['user_transaksi']['full_name'] ?? ''),0,0,'L');
-        $this->Cell(35,4,Date::parse($viewdata['created_at'])->setTimezone('Asia/Jakarta')->format('H:i:s'),0,1,'R');
+        $this->Cell(35,4,Carbon::parse($viewdata['created_at'])->setTimezone('Asia/Jakarta')->format('H:i:s'),0,1,'R');
 
         $this->Ln(1);
 
@@ -756,7 +757,7 @@ class PDF extends MultiCellTable
 
         if(!empty($getdata['detail_mekanik'])){
             $mekanik = implode(', ', array_column($getdata['detail_mekanik'],'nama'));
-            $this->MultiCell(0,4,'Mekanik : '.$mekanik,0,'L');
+            $this->MultiCell(0,4,'Customer Service : '.$mekanik,0,'L');
         }
 
         $this->Ln(2);

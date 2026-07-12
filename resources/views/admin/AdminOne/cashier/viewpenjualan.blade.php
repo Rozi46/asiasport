@@ -56,9 +56,9 @@
                                                 </div>
                                                 <div class="col-md-12 bg_form_page">
                                                     <div class="form-group row form_input text-left">
-                                                        <label for="mekanik" class="col-sm-2 col-form-label">Mekanik</label>
+                                                        <label for="mekanik" class="col-sm-2 col-form-label">Customer Service</label>
                                                         <div class="col-sm-10 input">
-                                                            <select id="nama_mekanik" name="nama_mekanik" placeholder="Mekanik" multiple>
+                                                            <select id="nama_mekanik" name="nama_mekanik" placeholder="Customer Servicef" multiple>
                                                                 @foreach ($list_mekanik as $view_data)
                                                                     <option value="{{$view_data['code_data']}}">{{$view_data['nama']}}</option>
                                                                 @endforeach
@@ -216,7 +216,7 @@
                 <script type="text/javascript">
                     $(document).ready(function(){ 
                         $('#nama_mekanik').select2({
-                            placeholder: 'Pilih Mekanik',
+                            placeholder: 'Pilih Customer Service',
                             allowClear: true,
                             width: '100%'
                         });
@@ -493,7 +493,7 @@
 
                         function initSelect2() {
                             el.mekanik.select2({
-                                placeholder: 'Pilih Mekanik',
+                                placeholder: 'Pilih customer Service',
                                 allowClear: true,
                                 width: '100%'
                             });
